@@ -1,0 +1,221 @@
+@media (min-width: 1280px) {
+    
+}
+
+
+
+html {
+    overflow-y: hidden;
+    font-family:  sans-serif;
+    font-weight: bold;
+}
+body {
+    transition: 1s;
+    color: #fff;
+    background: rgb(255, 255, 255);
+}
+
+#background {
+    position: fixed;
+    width: 100%;
+    background: #000;
+    z-index: 0;
+    left:0;
+    transition: 2s;
+}
+
+#background.about {
+    top:0;
+    height:8rem;
+}
+
+#background.contacts {
+    top:0;
+    height: 100%;
+}
+
+#background.projects {
+    top: 8rem;
+    /*bottom:0;*/
+    height: 100%;
+    margin: 0;
+}
+
+
+
+nav {
+    position: fixed;
+    top: 3rem;
+    right: 10rem;
+    cursor: default;
+    z-index: 3;
+    width: 15rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    /*margin-left: 3rem;*/
+    color: #5c5c5c;
+    font-weight: 500;
+}
+
+nav a:hover {
+    
+    text-shadow: #9c9c9c 0 0 1px;
+}
+/*
+nav a#active {
+    
+}*/
+
+nav#line {
+    z-index: 0;
+}
+
+nav div#line {
+    position: fixed;
+    top: 3rem;
+    right: 10rem;
+    border-bottom: 1px solid #9c9c9c;
+    border-bottom-color: #5c5c5c;
+    padding-bottom: 0.7rem;
+    height: 1rem;
+    width: 15rem;
+    z-index: 0;
+    transition: 2s;
+}
+
+#content {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    cursor: default;
+    
+}
+
+#content #about {
+    display: block;
+    position: absolute;
+    height: 2rem;
+    font-size: 2rem;
+    color:#000;
+    height: auto;
+    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+}
+
+#content start {
+    animation-duration: 3s;
+    animation-name: discoloration;
+}
+
+@keyframes discoloration {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+#content #contacts {
+    display: block flex;
+    width: auto;
+    /*position: fixed;*/
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+#content #contacts span {
+    width: 6rem;
+    height: 6rem;
+    color: #fff;
+    font-size: 4.5rem;
+    text-transform: lowercase;
+    border: 5px solid;
+    border-radius: 5rem;
+    margin-right: 3rem;
+    text-align: center;
+    padding: 0.5rem;
+    /*transition: 1s;*/
+}
+
+
+
+#content #contacts span#mail:hover {
+    color: #970505
+}
+
+#content #contacts span#telegram:hover {
+    color: rgb(51,144,236);
+}
+
+#content #contacts span#linkedin:hover {
+    color: #0a66c2;
+}
+
+#content #contacts span:hover {
+    background: rgba(255,255,255, 100%);
+        color: #000;
+        border-color: #fff;
+}
+
+@keyframes contactbg {
+    
+}
+
+#content #projects {
+    width: 50%;
+    display:inline flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#content #projects span {
+    height: 3rem;
+    color: #fff;
+    font-size: 2rem;
+    padding: 1rem;
+    text-transform: lowercase;
+    border: 5px solid;
+    border-radius: 5rem;
+    margin-right: 3rem;
+    text-align: center;
+    transition: 1s;
+}
+
+#content #projects span#one-million-pixels:hover {
+    background: rgba(0, 68, 3, 100%);
+    /*color:rgb(12, 12, 12);*/
+    border-color:rgb(0,68,3);
+}
+
+#content #projects span#short-link:hover {
+    background: rgb(105, 17, 17);
+    border-color: rgb(105, 17, 17);
+}
+
+
+.center {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    visibility: visible;
+    transition: 1s;
+}
