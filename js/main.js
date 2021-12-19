@@ -1,3 +1,9 @@
+var vacancy_list = {
+    "Designer" : '',
+    "front-end web developer" : '',
+    "back-end web developer" : ''
+};
+
 function changebackground(event) {
         $('#background').attr('class',$(this).attr('name'));
 }
@@ -42,7 +48,7 @@ function start() {
 }
 
 function click_mailto(event) {
-    let mail = 'mailto:rollingstone0protonmail.ch';
+    let mail = 'mailto:mr.bb.fst@pm.me';
     window.open(mail, '_blank') || window.location.replace(mail);
 } 
 
@@ -51,14 +57,34 @@ function click_telegram(event) {
     window.open(telegram, '_blank') || window.location.replace(telegram);
 }
 
-function click_linkedin() {
+function click_linkedin(event) {
     let linkedin = 'https://www.linkedin.com/in/%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB-%D0%BE%D1%81%D0%B8%D0%BF%D0%BA%D0%BE%D0%B2-955b96207/';
     window.open(linkedin, '_blank') || window.location.replace(linkedin);
 }
 
-function click_github() {
+function click_github(event) {
     let github = 'https://github.com/mrbbfst';
     window.open(github, '_blank') || window.location.replace(github);
+}
+
+function click_vacancy(event) {
+    $('#content > #projects').find("> *").each(
+        function() {
+            $(this).removeClass('show');
+            $(this).addClass('hide');
+        }
+    );
+    $('#content > #vacancy-list').removeClass('hide');
+
+}
+
+function showlinks(event) {
+    $('#content > #projects').find("> *").each(
+        function() {
+            $(this).removeClass('hide');
+            $(this).addClass('show');
+        }
+    );
 }
 
 $('document').ready(function() {
@@ -66,12 +92,18 @@ $('document').ready(function() {
     $("nav a").click(setLine)
               .click(changebackground)
               .click(showandhiden);
-
+              
+    $('nav a[name="projects"]').click(showlinks);
     $('#content > #contacts > #mail').click(click_mailto);
     $('#content > #contacts > #telegram').click(click_telegram);
     $('#content > #contacts > #linkedin').click(click_linkedin);
     $('#content > #contacts > #github').click(click_github);
-    
+    $('#content > #projects > #vacancy').click(click_vacancy);
+    $('#content > #vacancy-list').find('> *').each(function() {
+        $(this).click( function() {
+        $('nav a[name="contacts"]').click();//dispatchEvent(new Event('click'));
+        });
+    });
 });
 
 window.onresize = function(event) {
@@ -79,5 +111,6 @@ window.onresize = function(event) {
     $('nav div#line').addClass('onresize');    
     setLine();
     $('nav div#line').removeClass('onresize');
-    $('nav div#line').addClass('outresize');     
+    $('nav div#line').addClass('outresize');  
+    $('#background').css('width', '100%');   
 };

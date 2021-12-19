@@ -46,13 +46,12 @@ nav a {
     text-decoration: none;
     color: #666666;
     font-weight: 500;
-    transition: 1s;
+    
 }
 
 nav a:hover {
     text-shadow: #9c9c9c 0 0 1px;
     
-    transition: 1s;
 }
 
 nav#line {
@@ -67,7 +66,7 @@ nav div#line {
     padding-bottom: 0.3rem;
     height: 1rem;
     width: 15rem;
-    z-index: 0;
+    z-index: -1;
     
 }
 
@@ -184,6 +183,36 @@ nav div#line.outresize {
 #content #projects span#short-link:hover {
     background: rgb(105, 17, 17);
     border-color: rgb(105, 17, 17);
+}
+
+#content #projects span#vacancy:hover {
+    background: rgba(0,0,0,1);
+    color: #fff;
+    border-color: #000;
+}
+
+#content #vacancy-list {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#content #vacancy-list span {
+    font-size: 3rem;
+    font-weight: 700;
+    
+    width:35rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 3rem;
+    transition: 1s;
+}
+
+#content #vacancy-list span:hover {
+    color: #CCCCFF;
+    /*text-shadow: 2px 2px rgb(0, 0, 0);;*/
 }
 
 
