@@ -1,24 +1,31 @@
-@media (min-width: 1280px) {
-    
-}
 
 
+
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
 html {
     overflow-y: hidden;
-    font-family:  sans-serif;
+    font-family: "Comic Sans MS", cursive, sans-serif;/*, Arial, Helvetica, sans-serif;
+    
+    /*font-family:  sans-serif;*/
+    /*font-family: 'Varela Round', sans-serif;*/
+    
     font-weight: bold;
 }
 body {
     transition: 1s;
     color: #fff;
-    background: rgb(255, 255, 255);
+    background-color: #CCCCFF;
+    /*background: rgb(255, 255, 255);*/
+    text-shadow: 0px 1px 1px rgba(0,0,0,1);
 }
 
 #background {
     position: fixed;
     width: 100%;
-    background: #000;
+    background-color: #333333;
+    /*background: #000;*/
     z-index: 0;
     left:0;
     transition: 2s;
@@ -58,7 +65,8 @@ nav {
 nav a {
     text-decoration: none;
     /*margin-left: 3rem;*/
-    color: #5c5c5c;
+    /*color: #5c5c5c;*/
+    color: #666666;
     font-weight: 500;
 }
 
@@ -79,12 +87,20 @@ nav div#line {
     position: fixed;
     top: 3rem;
     right: 10rem;
-    border-bottom: 1px solid #9c9c9c;
-    border-bottom-color: #5c5c5c;
-    padding-bottom: 0.7rem;
+    border-bottom: 1px solid #5c5c5c;
+    /*border-bottom-color: ;*/
+    padding-bottom: 0.3rem;
     height: 1rem;
     width: 15rem;
     z-index: 0;
+    
+}
+
+nav div#line.onresize {
+    transition: 0;
+}
+
+nav div#line.outresize {
     transition: 2s;
 }
 
@@ -100,11 +116,12 @@ nav div#line {
 #content #about {
     display: block;
     position: absolute;
-    height: 2rem;
+    
     font-size: 2rem;
-    color:#000;
+    /*color:#000;*/
+    color: #333333;
     height: auto;
-    text-shadow: 0 0 2px rgba(0,0,0,0.7);
+    text-shadow: 0px 1px 1px rgba(0,0,0,1);
 }
 
 #content start {
@@ -127,6 +144,7 @@ nav div#line {
     /*position: fixed;*/
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -138,43 +156,50 @@ nav div#line {
     text-transform: lowercase;
     border: 5px solid;
     border-radius: 5rem;
-    margin-right: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     text-align: center;
     padding: 0.5rem;
+    margin-top:1rem;
+    margin-bottom:1rem;
     /*transition: 1s;*/
 }
 
 
 
 #content #contacts span#mail:hover {
-    color: #970505
+    /*color: #970505*/
+    color: #990000;
 }
 
 #content #contacts span#telegram:hover {
-    color: rgb(51,144,236);
+    /*color: rgb(51,144,236);*/
+    color: #0099FF;
 }
 
 #content #contacts span#linkedin:hover {
-    color: #0a66c2;
+    /*color: #0a66c2;*/
+    color: #0000CC;
+}
+/*
+#content #contacts span#github {
+    font-family: 'Exo 2', sans-serif;
+    padding-top: 0.3rem;
+    padding-bottom: 0.7rem;
+}
+*/
+#content #contacts span#github:hover {
+    
+    color: #171515;
 }
 
 #content #contacts span:hover {
     background: rgba(255,255,255, 100%);
-        color: #000;
-        border-color: #fff;
+    /*color: #000;*/
+    border-color: #fff;
+    transition: 1.5s;
 }
 
-@keyframes contactbg {
-    
-}
-
-#content #projects {
-    width: 50%;
-    display:inline flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 #content #projects span {
     height: 3rem;
@@ -184,9 +209,12 @@ nav div#line {
     text-transform: lowercase;
     border: 5px solid;
     border-radius: 5rem;
-    margin-right: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
     text-align: center;
     transition: 1s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #content #projects span#one-million-pixels:hover {
@@ -201,13 +229,6 @@ nav div#line {
 }
 
 
-.center {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-}
-
 .hide {
     opacity: 0;
     visibility: hidden;
@@ -218,4 +239,98 @@ nav div#line {
     opacity: 1;
     visibility: visible;
     transition: 1s;
+}
+
+@media only screen and (min-width: 480px) {
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+    .center#contacts {
+        transform: translate(-50%, -45%);
+    }
+
+    #content #projects {
+        width: 75%;
+        display:inline flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+}
+
+@media scleen and (max-width: 960px) {
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #content #projects {
+        width: 50%;
+        display:inline flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 360px) {
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+    .center#contacts {
+        transform: translate(-50%, -45%);
+    }
+
+    #content #projects {
+        width: 75%;
+        display:inline flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #content #contacts span {
+        width: 4rem;
+        height: 4rem;
+        color: #fff;
+        font-size: 3rem;
+        text-transform: lowercase;
+        border: 5px solid;
+        border-radius: 5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        text-align: center;
+        padding: 0.5rem;
+        margin-top:0.5rem;
+        margin-bottom:0.5rem;
+        /*transition: 1s;*/
+    }
+
+    #content #projects span {
+        height: 2rem;
+        color: #fff;
+        font-size: 1.5rem;
+        padding: 0.7rem;
+        text-transform: lowercase;
+        border: 5px solid;
+        border-radius: 5rem;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        text-align: center;
+        transition: 1s;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
 }

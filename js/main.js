@@ -14,7 +14,8 @@ function showandhiden(event) {
         if($(this).attr('name')==('C'+name)) {
             $(this).removeClass('hide');
             $(this).addClass('show');//css('visibility', 'visible');
-            $(this).attr('class', $(this).attr('class')+' start');
+            $(this).addClass('start');
+            //$(this).attr('class', $(this).attr('class')+' start');
         }
         else {
             $(this).removeClass('show');
@@ -27,7 +28,7 @@ function setLine(ev) {
     if(ev!=undefined) {   
         $('nav a#active').attr('id', '');
         $(this).attr('id', "active");
-        showandhiden($(this).attr('name'));
+        //showandhiden($(this).attr('name'));
     }
     var line = $('nav div#line');
     line.css($('nav a#active').offset());
@@ -55,6 +56,10 @@ function click_linkedin() {
     window.open(linkedin, '_blank') || window.location.replace(linkedin);
 }
 
+function click_github() {
+    let github = 'https://github.com/mrbbfst';
+    window.open(github, '_blank') || window.location.replace(github);
+}
 
 $('document').ready(function() {
     start();
@@ -65,6 +70,14 @@ $('document').ready(function() {
     $('#content > #contacts > #mail').click(click_mailto);
     $('#content > #contacts > #telegram').click(click_telegram);
     $('#content > #contacts > #linkedin').click(click_linkedin);
+    $('#content > #contacts > #github').click(click_github);
     
 });
 
+window.onresize = function(event) {
+    $('nav div#line').removeClass('outresize'); 
+    $('nav div#line').addClass('onresize');    
+    setLine();
+    $('nav div#line').removeClass('onresize');
+    $('nav div#line').addClass('outresize');     
+};
