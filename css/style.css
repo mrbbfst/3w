@@ -1,23 +1,15 @@
-
-
-
-
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
-
 html {
     overflow-y: hidden;
-    font-family: "Comic Sans MS", cursive, sans-serif;/*, Arial, Helvetica, sans-serif;
-    
-    /*font-family:  sans-serif;*/
-    /*font-family: 'Varela Round', sans-serif;*/
-    
+    font-family: "Rubic", sans-serif;
     font-weight: bold;
+    overflow-x: hidden;
 }
+
 body {
+    position: relative;
     transition: 1s;
     color: #fff;
     background-color: #CCCCFF;
-    /*background: rgb(255, 255, 255);*/
     text-shadow: 0px 1px 1px rgba(0,0,0,1);
 }
 
@@ -25,29 +17,17 @@ body {
     position: fixed;
     width: 100%;
     background-color: #333333;
-    /*background: #000;*/
     z-index: 0;
     left:0;
+    right:0;
     transition: 2s;
-}
-
-#background.about {
-    top:0;
-    height:8rem;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,1);
 }
 
 #background.contacts {
     top:0;
     height: 100%;
 }
-
-#background.projects {
-    top: 8rem;
-    /*bottom:0;*/
-    height: 100%;
-    margin: 0;
-}
-
 
 
 nav {
@@ -64,20 +44,16 @@ nav {
 
 nav a {
     text-decoration: none;
-    /*margin-left: 3rem;*/
-    /*color: #5c5c5c;*/
     color: #666666;
     font-weight: 500;
+    transition: 1s;
 }
 
 nav a:hover {
-    
     text-shadow: #9c9c9c 0 0 1px;
-}
-/*
-nav a#active {
     
-}*/
+    transition: 1s;
+}
 
 nav#line {
     z-index: 0;
@@ -88,7 +64,6 @@ nav div#line {
     top: 3rem;
     right: 10rem;
     border-bottom: 1px solid #5c5c5c;
-    /*border-bottom-color: ;*/
     padding-bottom: 0.3rem;
     height: 1rem;
     width: 15rem;
@@ -116,9 +91,7 @@ nav div#line.outresize {
 #content #about {
     display: block;
     position: absolute;
-    
     font-size: 2rem;
-    /*color:#000;*/
     color: #333333;
     height: auto;
     text-shadow: 0px 1px 1px rgba(0,0,0,1);
@@ -139,13 +112,11 @@ nav div#line.outresize {
 }
 
 #content #contacts {
-    display: block flex;
-    width: auto;
-    /*position: fixed;*/
+    display: flex;
+    width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-
 }
 
 #content #contacts span {
@@ -162,47 +133,35 @@ nav div#line.outresize {
     padding: 0.5rem;
     margin-top:1rem;
     margin-bottom:1rem;
-    /*transition: 1s;*/
 }
 
 
 
 #content #contacts span#mail:hover {
-    /*color: #970505*/
     color: #990000;
 }
 
 #content #contacts span#telegram:hover {
-    /*color: rgb(51,144,236);*/
     color: #0099FF;
 }
 
 #content #contacts span#linkedin:hover {
-    /*color: #0a66c2;*/
     color: #0000CC;
 }
-/*
-#content #contacts span#github {
-    font-family: 'Exo 2', sans-serif;
-    padding-top: 0.3rem;
-    padding-bottom: 0.7rem;
-}
-*/
+
 #content #contacts span#github:hover {
-    
     color: #171515;
 }
 
 #content #contacts span:hover {
     background: rgba(255,255,255, 100%);
-    /*color: #000;*/
     border-color: #fff;
     transition: 1.5s;
 }
 
 
 #content #projects span {
-    height: 3rem;
+    /*height: 3rem;*/
     color: #fff;
     font-size: 2rem;
     padding: 1rem;
@@ -219,7 +178,6 @@ nav div#line.outresize {
 
 #content #projects span#one-million-pixels:hover {
     background: rgba(0, 68, 3, 100%);
-    /*color:rgb(12, 12, 12);*/
     border-color:rgb(0,68,3);
 }
 
@@ -241,7 +199,7 @@ nav div#line.outresize {
     transition: 1s;
 }
 
-@media only screen and (min-width: 480px) {
+@media (min-device-width: 320px) and (max-device-width: 1240px) and (orientation: portrait) { /*mobile portrait*/
     .center {
         position: absolute;
         top: 50%;
@@ -253,18 +211,175 @@ nav div#line.outresize {
         transform: translate(-50%, -45%);
     }
 
+    #content #about {
+        display: block;
+        position: absolute;
+        width: 100%;
+        font-size: 2rem;
+        color: #333333;
+        height: auto;
+        text-shadow: 0px 1px 1px rgba(0,0,0,1);
+    }
+
     #content #projects {
-        width: 75%;
-        display:inline flex;
+        width: 90%;
+        display:flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
 
 
+    #content #projects span {
+        /*height: 3rem;*/
+        color: #fff;
+        font-size: 2rem;
+        padding: 1rem;
+        text-transform: lowercase;
+        border: 5px solid;
+        border-radius: 5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        text-align: center;
+        transition: 1s;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #background.projects {
+        top: 12rem;
+        height: 100%;
+        margin: 0;
+    }
+
+    #background.about {
+        top:0;
+        height:12rem;
+    }
+
+    nav {
+        position: fixed;
+        top: 7rem;
+        right:0;
+        cursor: default;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 2rem;
+    }
+
+    nav div#line {
+        position: fixed;
+        top: 7rem;
+        left: 0;
+        border-bottom: 1px solid #5c5c5c;
+        padding-bottom: 2rem;
+        height: 1rem;
+        width: 100%;
+        z-index: 0;
+  
+    }
 }
 
-@media scleen and (max-width: 960px) {
+@media (min-device-width: 360px) and (max-device-width: 1240px) and (orientation: landscape) {
+    .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+    }
+
+    .center#contacts {
+        transform: translate(-50%, -45%);
+    }
+
+    #content #about {
+        display: block;
+        position: absolute;
+        width: 90%;
+        font-size: 2rem;
+        color: #333333;
+        height: auto;
+        text-shadow: 0px 1px 1px rgba(0,0,0,1);
+    }
+
+    #content #projects {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    #content #projects span {
+        /*height: 3rem;*/
+        overflow: auto;
+        color: #fff;
+        font-size: 2rem;
+        padding: 1rem;
+        text-transform: lowercase;
+        border: 5px solid;
+        border-radius: 5rem;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        text-align: center;
+        transition: 1s;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #background.projects {
+        top: 6rem;
+        height: 100%;
+        margin: 0;
+    }
+
+    #background.about {
+        top:0;
+        height:6rem;
+    }
+
+    #background.contacts {
+        top:0;
+        height: 100%;
+        width: 100%;
+    }
+
+    nav {
+        position: fixed;
+        top: 1.5rem;
+        right:0;
+        cursor: default;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 2rem;
+    }
+
+    nav div#line {
+        position: fixed;
+        top: 10rem;
+        left: 0;
+        border-bottom: 1px solid #5c5c5c;
+        padding-bottom: 2rem;
+        height: 1rem;
+        width: 100%;
+        z-index: 0;
+        
+    }
+}
+
+/*@media (min-device-width: 768px) and (max-device-width: 1024px) and (max-width:900px) and (orientation: portrait) { /*mobile landscape*/
+/*
+}
+*/
+/*
+@media screen and (max-width: 960px) {
     .center {
         position: absolute;
         top: 50%;
@@ -280,57 +395,72 @@ nav div#line.outresize {
         justify-content: center;
     }
 }
+*/
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
-@media only screen and (min-width: 360px) {
-    .center {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -30%);
-    }
-
-    .center#contacts {
-        transform: translate(-50%, -45%);
-    }
+.center#contacts {
+    transform: translate(-50%, -50%);
+}
+@media only screen and (min-device-width:1240px) { /* pc/laptop big window*/
 
     #content #projects {
         width: 75%;
-        display:inline flex;
+        display:flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    #content #contacts span {
-        width: 4rem;
-        height: 4rem;
+    #content #projects span {
+        /*height: 3rem;*/
         color: #fff;
-        font-size: 3rem;
+        font-size: 2rem;
+        padding: 1rem;
         text-transform: lowercase;
         border: 5px solid;
         border-radius: 5rem;
         margin-right: 1rem;
         margin-left: 1rem;
         text-align: center;
-        padding: 0.5rem;
-        margin-top:0.5rem;
-        margin-bottom:0.5rem;
-        /*transition: 1s;*/
+        transition: 1s;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
     }
 
-    #content #projects span {
-        height: 2rem;
-        color: #fff;
-        font-size: 1.5rem;
-        padding: 0.7rem;
-        text-transform: lowercase;
-        border: 5px solid;
-        border-radius: 5rem;
-        margin-right: 0.5rem;
-        margin-left: 0.5rem;
-        text-align: center;
-        transition: 1s;
-        margin-top: 0.5rem;
-        margin-bottom: 0.5rem;
+    #background.about {
+        top:0;
+        height:8rem;
     }
+      
+    #background.projects {
+        top: 8rem;
+        height: 100%;
+        margin: 0;
+    }
+
 }
+
+@media only screen and (min-device-width:1240px) and (max-width:500px){
+    nav {
+        position: fixed;
+        top: 3rem;
+        right:0;
+        cursor: default;
+        z-index: 3;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    
+
+
+
+}
+
