@@ -1,7 +1,7 @@
 var vacancy_list = {
     "Designer" : '',
     "front-end web developer" : '',
-    "back-end web developer" : ''
+    "Advertising manager" : ''
 };
 
 function changebackground(event) {
@@ -48,7 +48,7 @@ function start() {
 }
 
 function click_mailto(event) {
-    let mail = 'mailto:mr.bb.fst@pm.me';
+    let mail = 'mailto:prog@duck.com';
     window.open(mail, '_blank') || window.location.replace(mail);
 } 
 
