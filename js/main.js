@@ -93,7 +93,7 @@ $('document').ready(function() {
               .click(changebackground)
               .click(showandhiden);
               
-    $('nav a[name="projects"]').click(showlinks);
+    //$('nav a[name="projects"]').click(showlinks);
     $('#content > #contacts > #mail').click(click_mailto);
     $('#content > #contacts > #telegram').click(click_telegram);
     $('#content > #contacts > #linkedin').click(click_linkedin);
