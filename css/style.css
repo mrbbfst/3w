@@ -132,6 +132,7 @@ nav div#line.outresize {
     padding: 0.5rem;
     margin-top:1rem;
     margin-bottom:1rem;
+    transition: 1s;
 }
 
 
