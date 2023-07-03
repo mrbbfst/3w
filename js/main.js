@@ -53,12 +53,12 @@ function click_mailto(event) {
 } 
 
 function click_telegram(event) {
-    let telegram = 'https://t.me/mrbbfst';
+    let telegram = '';
     window.open(telegram, '_blank') || window.location.replace(telegram);
 }
 
 function click_linkedin(event) {
-    let linkedin = 'https://www.linkedin.com/in/%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%BB-%D0%BE%D1%81%D0%B8%D0%BF%D0%BA%D0%BE%D0%B2-955b96207/';
+    let linkedin = 'https://twiukraine.com/@mrbbfst';
     window.open(linkedin, '_blank') || window.location.replace(linkedin);
 }
 
